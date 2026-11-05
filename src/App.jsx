@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import mixpanel from 'mixpanel-browser';
+import posthog from 'posthog-js';
 import VariantA from './variantA/VariantA.jsx';
 import VariantB, { B_READY } from './variantB/VariantB.jsx';
 import { getAssignment } from './assign.js';
@@ -26,7 +26,7 @@ export default function App() {
         });
         let distinct_id = null;
         try {
-          distinct_id = IS_TESTER ? 'tester' : mixpanel.get_distinct_id();
+          distinct_id = IS_TESTER ? 'tester' : posthog.get_distinct_id();
         } catch {}
         window.__AB__ = { response_id, distinct_id, version: a.version };
         track('ab_assigned', { is_returning: a.is_returning });

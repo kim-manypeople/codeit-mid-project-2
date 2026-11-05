@@ -358,7 +358,7 @@ export default function VariantA() {
     };
     track('ab_response_submitted', props);
 
-    // 응답 원본(인터뷰 연락처 포함)은 Mixpanel이 아니라 서버에 저장
+    // 응답 원본(인터뷰 연락처 포함)은 PostHog가 아니라 서버에 저장
     if (!IS_TESTER) {
       const shown = new Set(visibleFields(LAST, answers).map((x) => x.id));
       const rows = {};
