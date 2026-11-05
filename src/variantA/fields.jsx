@@ -33,12 +33,13 @@ function RadioField({ field, value, onChange }) {
       {field.options.map((o) => {
         const checked = value === o.id;
         return (
-          <label key={o.id} className={OPTION_CLASS} onClick={() => onChange(o.id)}>
+          // label로 감싸면 브라우저가 안쪽 버튼에 클릭을 한 번 더 보내 두 번 처리된다. div로 감싼다.
+          <div key={o.id} className={OPTION_CLASS} onClick={() => onChange(o.id)}>
             <span className="text-md font-normal">{o.label}</span>
             <button type="button" role="radio" aria-checked={checked} data-state={checked ? 'checked' : 'unchecked'} className="rounded-full text-primary cursor-pointer" tabIndex={-1}>
               <RadioIcon checked={checked} />
             </button>
-          </label>
+          </div>
         );
       })}
     </div>
@@ -53,12 +54,12 @@ function CheckboxField({ field, value, onToggle }) {
         {field.options.map((o) => {
           const checked = selected.includes(o.id);
           return (
-            <label key={o.id} className={OPTION_CLASS} onClick={() => onToggle(o.id)}>
+            <div key={o.id} className={OPTION_CLASS} onClick={() => onToggle(o.id)}>
               <span className="text-md font-normal">{o.label}</span>
               <button type="button" role="checkbox" aria-checked={checked} data-state={checked ? 'checked' : 'unchecked'} className="peer rounded-sm cursor-pointer" tabIndex={-1}>
                 <CheckIcon checked={checked} />
               </button>
-            </label>
+            </div>
           );
         })}
       </div>
