@@ -1,0 +1,86 @@
+@import 'tailwindcss';
+@import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
+@import '@fontsource-variable/inter';
+
+/* 왈라 폼에서 측정한 색과 크기 */
+@theme {
+  --font-sans: 'Inter Variable', 'Pretendard Variable', Pretendard, sans-serif;
+  --color-background: #ffffff;
+  --color-foreground: #212121;
+  --color-primary: #007eff;
+  --color-primary-foreground: #ffffff;
+  --color-field: #fbfbfb;
+  --color-field-foreground: #d3d3d3;
+  --color-destructive: #e14141;
+  --color-ring: #007eff;
+  --color-info: #f2f3f5;
+  --color-info-foreground: #6b7280;
+  --color-heading: #212121;
+  --color-paragraph: #4d4d4d;
+  --color-muted-foreground: #a6a6a6;
+  --radius-sm: 8.8px;
+  --radius-md: 10.8px;
+  --text-md: 16px;
+  --text-md--line-height: 24px;
+}
+
+html,
+body {
+  background: #ffffff;
+  color: #212121;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 문항 제목 영역 (왈라 ProseMirror) */
+.ProseMirror h3 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin: 0;
+}
+.ProseMirror > * + h3 {
+  margin-top: 16px;
+}
+.ProseMirror p {
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--color-paragraph);
+  margin: 8px 0;
+}
+.ProseMirror > :last-child {
+  margin-bottom: 0;
+}
+.ProseMirror strong {
+  font-weight: 700;
+}
+.ProseMirror h3 strong {
+  font-weight: 700;
+}
+.ProseMirror .emoji {
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', Pretendard, sans-serif;
+}
+.ProseMirror img {
+  max-width: 100%;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-field-foreground);
+}
+
+.toast-enter {
+  animation: toast-in 0.35s ease;
+}
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

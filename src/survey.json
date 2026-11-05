@@ -1,0 +1,586 @@
+{
+ "pages": [
+  [
+   {
+    "id": "ea4d3bda-2c33-4b43-abe8-1eb843dbd853",
+    "key": "ea4d3bda",
+    "num": "1",
+    "type": "DESCRIPTION",
+    "title": "인트로",
+    "html": "<h3>&nbsp;</h3><div style=\"display: flex; width: 100%; justify-content: center;\"><img src=\"/intro.webp\" data-width=\"100%\" data-align=\"center\" class=\"image-block\" style=\"width: 100%;\"></div><h3><strong>\"그 정도로 이혼까지 해?\"</strong></h3><p>사소한데 은근히 거슬리는 배우자의 습관들.</p><p>어디까지 참을 수 있는지 당신의 <strong>이혼 역치</strong>를 측정해드립니다. ⚖️</p><p>실제 결혼 여부와 상관없이 상상하며 가볍게 응답해주세요. (약 5분)</p>",
+    "required": false
+   }
+  ],
+  [
+   {
+    "id": "8d4c880f-0ea8-4d91-8fdc-cda71d01a27d",
+    "key": "8d4c880f",
+    "num": "2",
+    "type": "RADIO",
+    "title": "둘 중 더 참기 힘든 배우자는?",
+    "html": "<h3>둘 중 더 참기 힘든 배우자는?</h3><p>&nbsp;</p>",
+    "required": true,
+    "options": [
+     {
+      "id": "kFHCZunMF",
+      "label": "치약을 항상 중간부터 짜는 배우자"
+     },
+     {
+      "id": "zInRhLJtu",
+      "label": "치약 뚜껑을 절대 안 닫는 배우자"
+     }
+    ]
+   },
+   {
+    "id": "2e5b3d07-5a0c-4ab3-b061-01a45817784f",
+    "key": "2e5b3d07",
+    "num": "3",
+    "type": "CHECKBOX",
+    "title": "이건 솔직히 이혼 사유 인정한다!",
+    "html": "<h3>이건 솔직히 이혼 사유 인정한다!</h3><p>&nbsp;</p>",
+    "required": true,
+    "min": 3,
+    "max": 3,
+    "options": [
+     {
+      "id": "rPpCwOnDy",
+      "label": "양말을 늘 뒤집어서 벗어둔다"
+     },
+     {
+      "id": "VZEumbzRM",
+      "label": "같이 보던 드라마를 혼자 다음 화까지 봤다"
+     },
+     {
+      "id": "JDXpAJBKL",
+      "label": "탕수육에 묻지도 않고 소스를 부었다"
+     },
+     {
+      "id": "KYZsWPPQJ",
+      "label": "화장실 휴지가 떨어져도 안 갈아 끼운다"
+     },
+     {
+      "id": "SeOgfcmRG",
+      "label": "내 몫의 마지막 치킨 조각을 먹었다"
+     },
+     {
+      "id": "WcDLhROqH",
+      "label": "코골이 소리가 데시벨 측정급이다"
+     },
+     {
+      "id": "WGSJNlFgG",
+      "label": "냉장고에 빈 우유곽을 다시 넣어둔다"
+     }
+    ]
+   },
+   {
+    "id": "ac6d4880-0bc6-4736-a8c8-b3c111f7c914",
+    "key": "ac6d4880",
+    "num": "4",
+    "type": "RADIO",
+    "title": "나는 어떤 쪽에 더 가까운가요?",
+    "html": "<h3>나는 어떤 쪽에 더 가까운가요?</h3><p>&nbsp;</p>",
+    "required": true,
+    "options": [
+     {
+      "id": "GFdQfBtcY",
+      "label": "웬만한 건 '그럴 수 있지' 하고 넘긴다"
+     },
+     {
+      "id": "biOviOZao",
+      "label": "사소한 것도 그때그때 짚고 넘어가야 한다"
+     }
+    ]
+   }
+  ],
+  [
+   {
+    "id": "ae23bbcf-7907-4b17-8e9b-a2d1f7c928c5",
+    "key": "ae23bbcf",
+    "num": "5",
+    "type": "RADIO",
+    "title": "둘 중 하나만 고친다면?",
+    "html": "<h3>둘 중 하나만 고친다면?</h3><p>&nbsp;</p>",
+    "required": true,
+    "options": [
+     {
+      "id": "KanQYEYCD",
+      "label": "설거지를 다음 날까지 담가두는 배우자"
+     },
+     {
+      "id": "sgvVmbBcm",
+      "label": "설거지를 했는데 기름기가 그대로인 배우자"
+     }
+    ]
+   },
+   {
+    "id": "e3377c3a-f89d-47b6-80ca-853083b9d1f4",
+    "key": "e3377c3a",
+    "num": "6",
+    "type": "RADIO",
+    "title": "둘 중 더 참기 힘든 배우자는?",
+    "html": "<h3>둘 중 더 참기 힘든 배우자는?</h3><p>&nbsp;</p>",
+    "required": true,
+    "options": [
+     {
+      "id": "XVwgZHxXW",
+      "label": "에어컨을 18도로 틀고 이불을 덮는 배우자"
+     },
+     {
+      "id": "ScmmLzsVO",
+      "label": "한여름에도 에어컨은 전기세 아깝다는 배우자"
+     }
+    ]
+   },
+   {
+    "id": "0358061d-b171-4264-886f-1351b507c089",
+    "key": "0358061d",
+    "num": "7",
+    "type": "CHECKBOX",
+    "title": "배우자가 이렇게 한다면 차라리 반갑다!",
+    "html": "<h3>배우자가 이렇게 한다면 차라리 반갑다!</h3><p>&nbsp;</p>",
+    "required": true,
+    "exact": 3,
+    "options": [
+     {
+      "id": "kBSyAqICp",
+      "label": "매일 아침 모닝콜 대신 노래를 불러준다"
+     },
+     {
+      "id": "RKBXXLsev",
+      "label": "내 휴대폰 사진첩을 정리해준다"
+     },
+     {
+      "id": "YAenMMOtR",
+      "label": "주말마다 새로운 취미를 같이 하자고 한다"
+     },
+     {
+      "id": "sidrBIBrj",
+      "label": "내 친구들과 나보다 더 친해진다"
+     },
+     {
+      "id": "kHvWvfwVl",
+      "label": "집안 물건 위치를 매주 새로 바꿔둔다"
+     },
+     {
+      "id": "XJxawDJpj",
+      "label": "나 대신 내 SNS에 댓글을 달아준다"
+     }
+    ]
+   },
+   {
+    "id": "50cfe80d-d29d-4f88-b7fb-2904577e42de",
+    "key": "50cfe80d",
+    "num": "8",
+    "type": "NUMBER",
+    "title": "배우자가 양말을 뒤집어 벗어 두는 것, 몇 번까지 참을 수 있나요?",
+    "html": "<h3>배우자가 양말을 뒤집어 벗어 두는 것, 몇 번까지 참을 수 있나요?</h3><p>&nbsp;</p>",
+    "required": true,
+    "placeholder": "숫자만 입력"
+   }
+  ],
+  [
+   {
+    "id": "8b9f1f70-6110-42f8-8ce9-c487df72a1e3",
+    "key": "8b9f1f70",
+    "num": "9",
+    "type": "RADIO",
+    "title": "둘 중 더 서운한 배우자는?",
+    "html": "<h3>둘 중 더 서운한 배우자는?</h3><p>&nbsp;</p>",
+    "required": true,
+    "exact": 1,
+    "options": [
+     {
+      "id": "tOIegUdQB",
+      "label": "내 생일을 까먹은 배우자"
+     },
+     {
+      "id": "MhqBlYGHw",
+      "label": "생일은 기억했는데 선물이 '그냥 현금'인 배우자"
+     }
+    ]
+   },
+   {
+    "id": "6402e5c7-a7f0-4ad1-9458-d2d13632d1cd",
+    "key": "6402e5c7",
+    "num": "10",
+    "type": "CHECKBOX",
+    "title": "배우자 몰래 했다면 용서 못 할 지출은?",
+    "html": "<h3>배우자 몰래 했다면 용서 못 할 지출은?</h3><p>&nbsp;</p>",
+    "required": true,
+    "exact": 2,
+    "options": [
+     {
+      "id": "hrssHofgx",
+      "label": "한정판 피규어 30만 원"
+     },
+     {
+      "id": "UVDaQQzzd",
+      "label": "게임 현질 50만 원"
+     },
+     {
+      "id": "SykXdpYRt",
+      "label": "아무도 안 쓰는 운동기구"
+     },
+     {
+      "id": "zCrnUWLbv",
+      "label": "홈쇼핑 냄비 세트 (집에 이미 3세트 있음)"
+     },
+     {
+      "id": "HxMuXrEYt",
+      "label": "친구한테 몰래 빌려준 100만 원"
+     }
+    ]
+   },
+   {
+    "id": "1dec975a-288e-44e9-88b6-3108750987ed",
+    "key": "1dec975a",
+    "num": "11",
+    "type": "RADIO",
+    "title": "둘 중 더 참기 힘든 배우자는?",
+    "html": "<h3>둘 중 더 참기 힘든 배우자는?</h3><p>&nbsp;</p>",
+    "required": true,
+    "exact": 1,
+    "options": [
+     {
+      "id": "qAuCENqnq",
+      "label": "회식 중에 연락이 한 통도 없는 배우자"
+     },
+     {
+      "id": "QvLQlBUSl",
+      "label": "회식 중에 30분마다 영상통화를 거는 배우자"
+     }
+    ]
+   },
+   {
+    "id": "db7b9c91-4a07-4d33-8e58-e4b532ab50ae",
+    "key": "db7b9c91",
+    "num": "12",
+    "type": "SHORT_TEXT",
+    "title": "배우자에게 서운할 때 딱 한마디로 표현한다면?",
+    "html": "<h3>배우자에게 서운할 때 딱 한마디로 표현한다면?</h3><p>&nbsp;</p>",
+    "required": true,
+    "maxLength": 10,
+    "placeholder": "2~10자"
+   }
+  ],
+  [
+   {
+    "id": "8be9467b-67e1-4d7a-9fb2-4ce84efe0087",
+    "key": "8be9467b",
+    "num": "13",
+    "type": "RADIO",
+    "title": "둘 중 하나는 평생 감수해야 한다면?",
+    "html": "<h3>둘 중 하나는 평생 감수해야 한다면?</h3><p>&nbsp;</p>",
+    "required": true,
+    "options": [
+     {
+      "id": "bpEiUZDas",
+      "label": "매일 아침 같은 아재개그를 하는 배우자"
+     },
+     {
+      "id": "eiimpnBgW",
+      "label": "매일 밤 오늘 있었던 일을 1시간씩 브리핑하는 배우자"
+     }
+    ]
+   },
+   {
+    "id": "4ef9d201-47b6-4f27-9335-d2807d2afdf3",
+    "key": "4ef9d201",
+    "num": "14",
+    "type": "RADIO",
+    "title": "둘 중 하나는 평생 감수해야 한다면?",
+    "html": "<h3>둘 중 하나는 평생 감수해야 한다면?</h3><p>&nbsp;</p>",
+    "required": true,
+    "options": [
+     {
+      "id": "CfUiKLVDu",
+      "label": "여행 계획을 분 단위로 짜는 배우자"
+     },
+     {
+      "id": "PdATGCcqE",
+      "label": "여행 가서 '어디 갈지 가서 정하자'는 배우자"
+     }
+    ]
+   },
+   {
+    "id": "285baef7-54c7-4662-acaf-e6dce136a7ed",
+    "key": "285baef7",
+    "num": "15",
+    "type": "CHECKBOX",
+    "title": "이 정도면 이혼 서류 들고 간다!",
+    "html": "<h3>이 정도면 이혼 서류 들고 간다!</h3><p>&nbsp;</p>",
+    "required": true,
+    "exact": 2,
+    "options": [
+     {
+      "id": "mUjLHqazt",
+      "label": "내 휴대폰 충전기를 자꾸 가져간다"
+     },
+     {
+      "id": "wMBetHexc",
+      "label": "내가 아껴둔 아이스크림을 먹었다"
+     },
+     {
+      "id": "xkNPopABt",
+      "label": "나보다 반려동물을 더 반긴다"
+     },
+     {
+      "id": "LJqLAkGEZ",
+      "label": "주말 내내 소파와 한 몸이 된다"
+     },
+     {
+      "id": "NQnzIzaPC",
+      "label": "내 옷을 허락 없이 입고 나갔다"
+     }
+    ]
+   },
+   {
+    "id": "6ad50b88-1217-4557-9a9d-2ec226254d5a",
+    "key": "6ad50b88",
+    "num": "16",
+    "type": "SHORT_TEXT",
+    "title": "배우자를 향한 최후 변론을 한 줄로 남겨주세요.",
+    "html": "<h3>배우자를 향한 최후 변론을 한 줄로 남겨주세요.</h3><p>&nbsp;</p>",
+    "required": false,
+    "maxLength": 20,
+    "placeholder": "20자 이내"
+   }
+  ],
+  [
+   {
+    "id": "1f0115f0-f119-458b-bb9e-f6fc6f4f7acc",
+    "key": "1f0115f0",
+    "num": "17-1",
+    "type": "DESCRIPTION",
+    "title": "⚖️ 판결이 나오기 직전이에요! ",
+    "html": "<h3><span style=\"font-size: 1em; font-family: &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, Pretendard, sans-serif;\">⚖️</span> 판결이 나오기 직전이에요!</h3><p>마지막으로, 방금 설문에 <strong>응답하면서 어땠는지</strong> 알려주세요.</p><p>지금부터는 앞의 질문 내용이 아니라, <strong>설문 화면을 사용해 본 경험</strong>에 대해 여쭤볼게요.</p>",
+    "required": false
+   },
+   {
+    "id": "1b29bf69-ac58-45a9-84dd-6e1a7f7cad6a",
+    "key": "1b29bf69",
+    "num": "17-2",
+    "type": "RADIO",
+    "title": "응답하는 동안 남은 분량을 알고 있었나요?",
+    "html": "<h3>응답하는 동안 남은 분량을 알고 있었나요?</h3>",
+    "required": true,
+    "options": [
+     {
+      "id": "gWEMypfvY",
+      "label": "정확히 알고 있었다"
+     },
+     {
+      "id": "XJoIGJfXv",
+      "label": "대략 알고 있었다"
+     },
+     {
+      "id": "VfGLPiHUr",
+      "label": "잘 몰랐다"
+     },
+     {
+      "id": "qgDZqqkLa",
+      "label": "진행 상황 표시를 보지 못했다"
+     }
+    ]
+   },
+   {
+    "id": "6aaf7c86-281d-489f-84f1-ef5c2246d667",
+    "key": "6aaf7c86",
+    "num": "17-3",
+    "type": "RADIO",
+    "title": "응답 중에 오류 안내(빨간 문구, 경고 등)를 본 적이 있나요?",
+    "html": "<h3>응답 중에 오류 안내(빨간 문구, 경고 등)를 본 적이 있나요?</h3>",
+    "required": true,
+    "options": [
+     {
+      "id": "dOcOEcLqR",
+      "label": "있었다"
+     },
+     {
+      "id": "pjdVJiBxz",
+      "label": "없었다"
+     }
+    ]
+   },
+   {
+    "id": "80efdfde-6633-4ea9-8aaf-341883a61d4b",
+    "key": "80efdfde",
+    "num": "17-4",
+    "type": "RADIO",
+    "title": "하나만 고르는 질문인지, 여러 개 고를 수 있는 질문인지 헷갈린 적이 있나요?",
+    "html": "<h3>하나만 고르는 질문인지, 여러 개 고를 수 있는 질문인지 헷갈린 적이 있나요?</h3>",
+    "required": true,
+    "options": [
+     {
+      "id": "MsCerTKye",
+      "label": "전혀 없었다"
+     },
+     {
+      "id": "DtIMMEEpL",
+      "label": "한두 번 있었다"
+     },
+     {
+      "id": "CmNRNAEeA",
+      "label": "자주 헷갈렸다"
+     }
+    ]
+   },
+   {
+    "id": "7fe2d4fd-d905-4454-887b-589d72f5f8f0",
+    "key": "7fe2d4fd",
+    "num": "17-5",
+    "type": "LINEAR",
+    "title": "질문 내용과 상관없이, 설문 화면을 사용하기 얼마나 편했나요?",
+    "html": "<h3>질문 내용과 상관없이, 설문 화면을 사용하기 얼마나 편했나요?</h3><h3>&nbsp;</h3>",
+    "required": false,
+    "options": [
+     {
+      "id": "KlvQzUspW",
+      "label": "1"
+     },
+     {
+      "id": "TvFCKBEdC",
+      "label": "2"
+     },
+     {
+      "id": "voDnFaSgl",
+      "label": "3"
+     },
+     {
+      "id": "NpMJmqOpm",
+      "label": "4"
+     },
+     {
+      "id": "mLWWiBwsr",
+      "label": "5"
+     }
+    ],
+    "scale_min": 1,
+    "scale_max": 5,
+    "scale_minLabel": "너무 불편했다",
+    "scale_maxLabel": "너무 편안했다"
+   },
+   {
+    "id": "c424f897-a9ce-4847-bfed-2498d4abeeba",
+    "key": "c424f897",
+    "num": "17-6",
+    "type": "LONG_TEXT",
+    "title": "그 밖에 질문에 답하면서 불편했던 점이 있었다면 자유롭게 적어주세요.",
+    "html": "<h3>그 밖에 질문에 답하면서 불편했던 점이 있었다면 자유롭게 적어주세요.</h3>",
+    "required": false,
+    "placeholder": "자유롭게 의견을 작성해주세요"
+   }
+  ],
+  [
+   {
+    "id": "09884da9-2b6e-493e-b72b-996e9836c654",
+    "key": "09884da9",
+    "num": "18-1",
+    "type": "DESCRIPTION",
+    "title": "📝 설문 개선 인터뷰이를 모집합니다!",
+    "html": "<h3><span style=\"font-size: 1em; font-family: &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, Pretendard, sans-serif;\">📝</span> 설문 개선 인터뷰이를 모집합니다!</h3><p>이번 설문 <strong>화면의 버튼, 안내 문구, 진행 표시</strong> 등을 써보시면서 편했던 점과 불편했던 점을 여쭤봐요.</p><p>응답해주신 분들 중 약 10명을 선정해 개별로 연락드릴 예정이에요.</p><p>⏰ 약 20분 · 💻 온라인 화상(카메라 OFF 가능)</p>",
+    "required": false
+   },
+   {
+    "id": "8d867965-6065-47ae-84a0-58dc97ca8991",
+    "key": "8d867965",
+    "num": "18-2",
+    "type": "RADIO",
+    "title": "설문 화면 개선을 위한 인터뷰에 참여해주실 수 있나요?",
+    "html": "<h3>설문 화면 개선을 위한 인터뷰에 참여해주실 수 있나요?</h3><p>이번 설문의 이혼, 결혼 내용과 전혀 관련 없어요. 설문 응답 경험을 여쭤볼 예정이에요.</p>",
+    "required": true,
+    "options": [
+     {
+      "id": "SPSbRUCWD",
+      "label": "참여할게요"
+     },
+     {
+      "id": "eaGHNQmft",
+      "label": "이번엔 어려워요"
+     }
+    ]
+   },
+   {
+    "id": "0cee778f-a8f9-4af5-b1b3-f13e63a5fcbd",
+    "key": "0cee778f",
+    "num": "18-3",
+    "type": "RADIO",
+    "title": "개인정보 수집·이용에 동의해주세요.",
+    "html": "<h3>개인정보 수집·이용에 동의해주세요.</h3><p>&nbsp;</p>",
+    "required": true,
+    "options": [
+     {
+      "id": "QjOmXRsFh",
+      "label": "동의합니다"
+     },
+     {
+      "id": "kavfAlFSc",
+      "label": "동의하지 않습니다"
+     }
+    ]
+   },
+   {
+    "id": "42973a4b-784c-419e-9f6e-f4ed4941a01b",
+    "key": "42973a4b",
+    "num": "18-4",
+    "type": "SHORT_TEXT",
+    "title": "연락받으실 정보를 남겨주세요.",
+    "html": "<h3>연락받으실 정보를 남겨주세요.</h3><p>성함(닉네임 가능)과 휴대폰 번호를 입력해주세요.</p>",
+    "required": true,
+    "placeholder": ""
+   },
+   {
+    "id": "0c1bdef9-ec78-4ab5-9239-cd0dc9dfdeae",
+    "key": "0c1bdef9",
+    "num": "18-5",
+    "type": "CHECKBOX",
+    "title": "인터뷰가 가능한 시간대를 골라주세요.",
+    "html": "<h3>인터뷰가 가능한 시간대를 골라주세요.</h3>",
+    "required": true,
+    "options": [
+     {
+      "id": "MDbtwXWtk",
+      "label": "평일 오전 (10~12시)"
+     },
+     {
+      "id": "nqkhLqgOw",
+      "label": "평일 오후 (13~18시)"
+     },
+     {
+      "id": "oQAElNOql",
+      "label": "평일 저녁 (19~21시)"
+     },
+     {
+      "id": "BKzkaVKzZ",
+      "label": "주말 오전"
+     },
+     {
+      "id": "BDpXbNHoj",
+      "label": "주말 오후"
+     }
+    ]
+   }
+  ]
+ ],
+ "branches": {
+  "8d867965": {
+   "SPSbRUCWD": [
+    "0cee778f",
+    "42973a4b",
+    "0c1bdef9"
+   ],
+   "eaGHNQmft": []
+  },
+  "0cee778f": {
+   "QjOmXRsFh": [
+    "42973a4b",
+    "0c1bdef9"
+   ],
+   "kavfAlFSc": []
+  }
+ },
+ "submitLabel": "⚖️ 판결 받기",
+ "ending": {
+  "html": "<h3><span class=\"emoji\">🎉</span> 제출 완료</h3><p><strong><span class=\"emoji\">⚖️</span> 판결: 『그럴 수 있지』 대법관형</strong></p><p>웬만한 일엔 흔들리지 않는 넓은 마음의 소유자!</p><p>단, 마지막 치킨 조각은 예외입니다.🍗</p>"
+ }
+}
