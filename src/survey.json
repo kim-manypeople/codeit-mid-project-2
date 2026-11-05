@@ -432,7 +432,7 @@
     "type": "LINEAR",
     "title": "질문 내용과 상관없이, 설문 화면을 사용하기 얼마나 편했나요?",
     "html": "<h3>질문 내용과 상관없이, 설문 화면을 사용하기 얼마나 편했나요?</h3><h3>&nbsp;</h3>",
-    "required": false,
+    "required": true,
     "options": [
      {
       "id": "KlvQzUspW",
