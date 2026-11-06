@@ -1,6 +1,6 @@
 import { redis, hasRedis } from './_redis.js';
 
-// 응답 원본 저장 (인터뷰 연락처 포함). Mixpanel에는 연락처를 보내지 않는다.
+// 응답 원본 저장 (인터뷰 연락처 포함). PostHog에는 연락처를 보내지 않는다.
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'POST only' });
   if (!hasRedis) return res.status(503).json({ error: 'no redis' });

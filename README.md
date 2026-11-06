@@ -4,7 +4,7 @@
 
 - **A안**: 왈라 설문(`walla.my/v/7GnQjwfRKkgjmJrMEGzb`)을 화면과 동작 그대로 옮긴 프리토타입 (`src/variantA/`)
 - **B안**: 개선안 자리 (`src/variantB/VariantB.jsx`). 지금은 "준비 중" 화면만 보여요.
-- **Mixpanel 프로젝트**: codeit-mid-project-2
+- **분석 도구**: PostHog
 
 ## 실행
 
@@ -13,7 +13,7 @@ npm install
 npm run dev
 ```
 
-- 팀원 모드: `/?tester=1` (Mixpanel로 아무것도 보내지 않고 콘솔에만 출력, 배정 카운터도 안 올림)
+- 팀원 모드: `/?tester=1` (PostHog로 아무것도 보내지 않고 콘솔에만 출력, 배정 카운터도 안 올림)
 - 버전 고르기: `/?tester=1&version=A`, `/?tester=1&version=B`
 
 ## 배포 (Vercel)
@@ -22,7 +22,9 @@ npm run dev
 2. **Storage → Upstash Redis(또는 KV)** 를 프로젝트에 연결해요. `KV_REST_API_URL`, `KV_REST_API_TOKEN`이 자동으로 들어와요.
    - 배정 카운터(`/api/assign`)와 응답 원본 저장(`/api/submit`)에 써요.
    - 연결하지 않으면 배정은 50:50 무작위(`assign_method = fallback`)로 대신하고, 응답 원본은 저장되지 않아요.
-3. **Settings → Environment Variables**에 `VITE_MIXPANEL_TOKEN`(codeit-mid-project-2의 Project Token)을 넣어요. 없으면 이벤트를 보내지 않아요. 로컬에서는 `.env.local`에 같은 이름으로 넣어요.
+3. **Settings → Environment Variables**에 `VITE_POSTHOG_KEY`(PostHog 프로젝트의 Project API Key, `phc_`로 시작)를 넣어요. 없으면 이벤트를 보내지 않아요. 로컬에서는 `.env.local`에 같은 이름으로 넣어요.
+   - PostHog 프로젝트가 EU 클라우드면 `VITE_POSTHOG_HOST=https://eu.i.posthog.com`도 넣어요. 없으면 US(`https://us.i.posthog.com`)로 보내요.
+   - PostHog **Settings → Session replay**를 켜야 세션 기록이 남아요.
 
 ## A/B 배정
 
@@ -86,6 +88,6 @@ npm run dev
 | `ab_response_submitted` | 제출 버튼을 누를 때 | `seconds_total`, `seconds_main`, `error_events_main`, `exp_17_2`·`exp_17_2_label`, `exp_17_3`·`_label`, `exp_17_4`·`_label`, `ease_score`(17-5), `reason`(17-6), `interview_join` |
 | `ab_exit` | 응답 도중 화면을 떠날 때(sendBeacon) | `last_question_viewed`, `last_question_answered`, `section`, `page`, `seconds_since_start` |
 
-- 인터뷰 연락처(18-4)는 **Mixpanel에 보내지 않아요.** 응답 원본은 `/api/submit`으로 Redis(`divorce_1:responses`)에만 저장돼요.
-- 세션 기록과 히트맵이 켜져 있어요(`record_sessions_percent: 100`, `record_heatmap_data: true`). 문항·보기 글자는 기록에 보이고(`record_mask_all_text: false`), 참가자가 입력한 칸(숫자·짧은 글·서술형·연락처)은 가려져요(`record_mask_all_inputs: true`).
+- 인터뷰 연락처(18-4)는 **PostHog에 보내지 않아요.** 응답 원본은 `/api/submit`으로 Redis(`divorce_1:responses`)에만 저장돼요.
+- 세션 기록과 히트맵이 켜져 있어요(모든 응답자 기록, `capture_heatmaps: true`). 문항·보기 글자는 기록에 보이고, 참가자가 입력한 칸(숫자·짧은 글·서술형·연락처)은 가려져요(`session_recording.maskAllInputs: true`).
 - distinct_id는 SDK가 기기마다 자동으로 만들어요(`identify()`를 부르지 않음).
