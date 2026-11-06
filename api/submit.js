@@ -31,7 +31,11 @@ async function sendToSheet(row) {
       body: JSON.stringify(row),
       signal: ctrl.signal,
     });
-    return res.ok;
+    // Apps Script는 오류나 거절에도 200을 돌려주므로 본문으로 판단한다.
+    const text = (await res.text()).trim();
+    if (text === 'ok' || text === 'dup') return text;
+    if (text === 'forbidden') return 'forbidden';
+    return res.ok ? 'script_error' : 'http_' + res.status;
   } finally {
     clearTimeout(t);
   }
@@ -57,12 +61,13 @@ export default async function handler(req, res) {
     const row = sheetOn ? interviewRow(record) : null;
     if (row) {
       try {
-        sheet = (await sendToSheet(row)) ? 'ok' : 'failed';
+        sheet = await sendToSheet(row);
       } catch (e) {
-        sheet = 'failed';
-        console.error('[sheet]', e.message || e);
+        sheet = 'network_error';
       }
-      if (!saved && sheet !== 'ok') return res.status(502).json({ error: 'sheet failed' });
+      // ok/dup 외에는 Vercel 로그에 남긴다 (forbidden = 비밀값 불일치, script_error = 스크립트 오류)
+      if (sheet !== 'ok' && sheet !== 'dup') console.error('[sheet]', sheet, row.response_id);
+      if (!saved && sheet !== 'ok' && sheet !== 'dup') return res.status(502).json({ error: 'sheet ' + sheet });
     }
     return res.status(200).json({ ok: true, sheet });
   } catch (e) {
