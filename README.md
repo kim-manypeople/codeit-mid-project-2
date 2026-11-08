@@ -3,7 +3,9 @@
 설문 응답 화면 A/B 테스트용 모바일 웹사이트예요. 참가자는 A나 B 중 하나만 응답해요.
 
 - **A안**: 왈라 설문(`walla.my/v/7GnQjwfRKkgjmJrMEGzb`)을 화면과 동작 그대로 옮긴 프리토타입 (`src/variantA/`)
-- **B안**: 개선안 자리 (`src/variantB/VariantB.jsx`). 지금은 "준비 중" 화면만 보여요.
+- **B안**: 개선안 (`src/variantB/`). Figma 「목업 hifi」를 옮긴 모바일 화면이에요. 문항·분기·이벤트는 A안과 같아요.
+  - A안과 다른 점: 복수선택 제목 끝 개수 알약("3개 선택"), 오류 시 하단 스낵바(바로가기 → 오류 문항으로 스크롤), 오류 문구("답변을 N개 더 선택해 주세요." 등), 진행률 바(답한 문항 수 / 전체 문항 수), 개수가 다 차면 나머지 보기 비활성, 떠 있는 이전·다음 버튼, 제출 완료 화면
+  - 디자인 에셋: `public/b/`
 - **분석 도구**: PostHog
 
 ## 실행
@@ -55,9 +57,16 @@ npm run dev
 
 ## B안 넣는 방법
 
-1. `src/variantB/VariantB.jsx`를 개선안 화면으로 바꿔요. 이벤트는 `src/tracking.js`의 `track()`으로 A와 같은 이름·속성으로 보내요.
-2. 같은 파일의 `B_READY`를 `true`로 바꿔요. `false`인 동안 B 배정자에게는 이벤트를 보내지 않아요.
-3. `ASSIGN_COUNTER_KEY`를 새 값으로 바꿔 카운터를 0으로 되돌리고 배포해요. 분석은 그 배포의 `build` 값부터 해요.
+B안은 들어가 있고 `B_READY = true`예요(B 배정자도 이벤트를 보내요). 실제 테스트를 시작하기 전에:
+
+1. `ASSIGN_COUNTER_KEY`를 새 값으로 바꿔 카운터를 0으로 되돌리고 배포해요. 분석은 그 배포의 `build` 값부터 해요.
+2. `/?tester=1&version=B`로 B안을 확인해요(이벤트는 콘솔에만 찍혀요).
+
+B안에만 있는 이벤트·속성:
+- `ab_snackbar_clicked`: 오류 스낵바의 [바로가기]를 눌렀을 때 (`page`, `error_count`)
+- `ab_end_close_clicked`: 제출 완료 화면의 [창 닫기]를 눌렀을 때
+- `ab_max_selection_exceeded`에 `blocked: true`: B안은 개수가 다 차면 나머지 보기가 비활성이라 더 고를 수 없어요. 비활성 보기를 누른 순간을 A안의 '초과 선택'과 같은 이벤트로 남겨요.
+- B안에는 '개수 초과' 오류(`kind: max`)가 없어요.
 
 ## 문항 번호
 
