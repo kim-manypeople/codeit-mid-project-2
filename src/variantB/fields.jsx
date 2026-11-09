@@ -17,7 +17,7 @@ function StatusLine({ field, error }) {
           <p className="text-[14px] leading-[14px] tracking-[-0.14px] text-[#ed4b4b]">{error.node}</p>
         </div>
       ) : field.required ? (
-        <p className="font-[Inter_Variable,Inter,sans-serif] text-[12px] leading-4 text-[#007eff]">{field.requiredLabel || '*필수'}</p>
+        <p className="font-[Inter_Variable,Inter,sans-serif] text-[12px] leading-4 text-[#007eff]">*필수</p>
       ) : null}
     </div>
   );
