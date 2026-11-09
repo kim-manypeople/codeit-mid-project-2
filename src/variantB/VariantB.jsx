@@ -1,5 +1,5 @@
 // B안(개선안). Figma 「목업 hifi」(node 903:2170)와 플로우(node 928:3249)를 옮긴 것.
-// A안과의 차이: 복수선택 개수 알약, 하단 오류 스낵바(바로가기 → 오류 문항으로 스크롤),
+// A안과의 차이: 복수선택 개수 알약, 하단 오류 스낵바(뜨면서 첫 오류 문항으로 자동 스크롤, 바로가기 → 다음 오류 문항),
 // 오류 문구, 진행률 바(문항 수 기준), 개수가 다 차면 나머지 보기 비활성, 제출 완료 화면.
 // 문항·분기·이벤트 이름과 속성은 A안과 같다(비교 분석용).
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -404,11 +404,28 @@ export default function VariantB() {
     window.scrollTo(0, 0);
   };
 
+  // 오류 문항으로 스크롤. force가 아니면 이미 화면 안(헤더 아래 ~ 스낵바 위)에 보일 때는 움직이지 않는다.
+  const errCursor = useRef(null); // 마지막으로 보여 준 오류 문항 id
+  const scrollToField = (f, force) => {
+    errCursor.current = f.id;
+    const el = containers.current[f.id];
+    if (!el) return;
+    if (!force) {
+      const r = el.getBoundingClientRect();
+      if (r.top >= 86 && r.top <= window.innerHeight - 106) return;
+    }
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  // 스낵바 [바로가기]: 지금 보고 있는 오류 문항의 다음 오류 문항으로 (끝이면 처음으로)
   const moveToError = () => {
     track('ab_snackbar_clicked', { page, error_count: errorCount });
-    const first = fields.find((f) => errors[f.id]);
-    const el = first && containers.current[first.id];
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const list = fields.filter((f) => errors[f.id]);
+    if (list.length === 0) return;
+    const order = fields.map((f) => f.id);
+    const cur = order.indexOf(errCursor.current);
+    const target = list.find((f) => order.indexOf(f.id) > cur) || list[0];
+    scrollToField(target, true);
   };
 
   const checkPage = () => {
@@ -427,6 +444,8 @@ export default function VariantB() {
       track('ab_error_shown', props);
     }
     if (page >= 1 && page <= MAIN_LAST) m.errorEventsMain += 1;
+    // 스낵바가 뜨면서 가장 위쪽 오류 문항으로 바로 이동 (화면 밖에 있을 때)
+    scrollToField(errs[0][0], false);
     return false;
   };
 

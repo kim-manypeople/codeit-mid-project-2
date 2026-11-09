@@ -17,7 +17,7 @@ function StatusLine({ field, error }) {
           <p className="text-[14px] leading-[14px] tracking-[-0.14px] text-[#ed4b4b]">{error.node}</p>
         </div>
       ) : field.required ? (
-        <p className="font-[Inter_Variable,Inter,sans-serif] text-[12px] leading-4 text-[#007eff]">*필수</p>
+        <p className="font-[Inter_Variable,Inter,sans-serif] text-[12px] leading-4 text-[#007eff]">{field.requiredLabel || '*필수'}</p>
       ) : null}
     </div>
   );
@@ -40,6 +40,9 @@ function Title({ field, no }) {
         <span className="shrink-0 pl-[6px] pr-[6px]">{no}.</span>
         <span className="min-w-0 break-keep">{field.title}</span>
       </h3>
+      {field.description && (
+        <p className="w-full pl-[6px] text-[16px] leading-6 tracking-[-0.16px] text-[#6e6e6e] break-keep">{field.description}</p>
+      )}
       {pill && (
         <span className="flex shrink-0 items-center justify-center rounded-[4px] border border-[#007eff] p-1 text-[14px] leading-[14px] text-[#007eff]">
           {pill}

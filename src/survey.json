@@ -526,6 +526,8 @@
     "type": "SHORT_TEXT",
     "title": "연락받으실 정보를 남겨주세요.",
     "html": "<h3>연락받으실 정보를 남겨주세요.</h3><p>성함(닉네임 가능)과 휴대폰 번호를 입력해주세요.</p>",
+    "description": "성함(닉네임 가능)과 휴대폰 번호를 입력해주세요.",
+    "requiredLabel": "* 필수 입력",
     "required": true,
     "placeholder": ""
    },
